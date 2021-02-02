@@ -8,11 +8,14 @@
 <body>
 <h1> List of Students</h1>
 <table>
-    <tr><th>ID</th><th>Name</th></tr>
-<th:block th:each="s: ${myStudent}">
+    <tr><th>ID</th><th>Name</th><th>Campus</th><th>Program of Study</th></tr>
+<th:block th:each="s: ${studentList}">
     <tr>
         <td th:text="${s.id}"></td>
         <td th:text="${s.name}"></td>
+        <td th:text="${s.campus}"></td>
+        <td th:text="${s.program}"></td>
+
     </tr>
 </th:block>
 </table>

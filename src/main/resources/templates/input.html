@@ -6,9 +6,17 @@
 </head>
 <body>
 <h1>Index Page</h1>
-<form th:action="@{processInput}" th:object="${student}">
+<form method="post" th:action="@{processInput}" th:object="${student}">
     ID: <input type="number" th:field="*{id}"><br>
     Name: <input type="text" th:field="*{name}">
+    Campus: <input type="radio" th:field="*{campus}" value="Davis">Davis
+            <input type="radio" th:field="*{campus}" value="Trafalgar">Trafalgar
+            <input type="radio" th:field="*{campus}" value="HMC">HMC<br>
+    Program: <select th:field="*{program}">
+        <th:block th:each="p: ${programs}">
+            <option th:value="${p}" th:text="${p}"></option>
+        </th:block>
+</select>
 
     <p>
         <input type="submit">
